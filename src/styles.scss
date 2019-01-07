@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@nebular/theme/styles/_theming';
+@import '~@nebular/theme/styles/themes/_cosmic';
+
+// and change the variables you need, 
+// or simply leave the map empty to use the default values
+// let's make it blue-ish instead of the default white color
+$nb-themes: nb-register-theme((
+  color-bg: #4ca6ff,
+  shadow: 0 1px 2px 0 #3780c0,
+  layout-bg: #ffffff,
+  color-fg: #222222
+), default, default);
+
+// this is your created themes.scss file, make sure the path to the file is correct
+//@import 'themes';
+
+// framework component styles which will use your new theme
+@import '~@nebular/theme/styles/_globals';
+
+// install the framework
+@include nb-install() {
+  @include nb-theme-global();
+};
